@@ -49,7 +49,6 @@ std::string file = "6.txt";
 
 int main(int argc, char* argv[])
 {
-    auto ChronoStart = std::chrono::high_resolution_clock::now();
 
     std::ifstream in(file);
     if (!in)
