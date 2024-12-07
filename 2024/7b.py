@@ -9,7 +9,7 @@ def calculate(required_sum, current_sum, current_index, length, nums, allow_conc
     if current_sum == required_sum and current_index == length:
         return True
 
-    if current_index == length:
+    if current_index == length or current_index >= length or (current_sum < required_sum and current_index >= length):
         return False
 
     num = int(nums[current_index])

@@ -52,7 +52,7 @@ bool calculate(ll sum, ll currentSum, int index, int size, vector<int>& nums, bo
         return true;
     }
 
-    if(currentSum > sum || index == size || (currentSum == sum && index >= size)) {
+    if(currentSum > sum || index >= size || (currentSum < sum && index >= size)) {
         return false;
     }
 
