@@ -1,6 +1,9 @@
+from functools import lru_cache
+
 with open('7.txt') as f:
     lines = [line.strip().split(": ") for line in f]
 
+@lru_cache(None)
 def calculate(required_sum, current_sum, current_index, length, nums, allow_concat):
 
     if current_sum == required_sum and current_index == length:
@@ -24,7 +27,7 @@ for line in lines:
     nums = line[1].split(" ")
     length = len(nums)
 
-    if calculate(int(line[0]), int(nums[0]), 1, length, nums, False):
+    if calculate(int(line[0]), int(nums[0]), 1, length, tuple(nums), True):
         value += int(line[0])
 
 print(value)
