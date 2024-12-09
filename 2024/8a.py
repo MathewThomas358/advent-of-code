@@ -9,15 +9,15 @@ def is_within_bounds(x, y):
 def calculate_distance(x1, x2):
     return (x1[0] - x2[0], x1[1] - x2[1])
 
-def find_antinode(x, y):
-    dx, dy = calculate_distance(x, y)
+def find_antinode(x1, x2):
+    dx, dy = calculate_distance(x1, x2)
     an1, an2 = None, None
 
-    if is_within_bounds(x[0] + dx, x[1] + dy):
-        an1 = (x[0] + dx, x[1] + dy)
+    if is_within_bounds(x1[0] + dx, x1[1] + dy):
+        an1 = (x1[0] + dx, x1[1] + dy)
 
-    if is_within_bounds(y[0] - dx, y[1] - dy):
-        an2 = (y[0] - dx, y[1] - dy)
+    if is_within_bounds(x2[0] - dx, x2[1] - dy):
+        an2 = (x2[0] - dx, x2[1] - dy)
 
     return an1, an2
 
